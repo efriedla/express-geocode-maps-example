@@ -1,7 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+//takes something and turns it into something
 var ejsLayouts = require('express-ejs-layouts');
+//module
 var db = require('./models');
+//Shows a nice table of your routes in Express.
 var rowdy = require('rowdy-logger');
 var app = express();
 
@@ -31,7 +34,7 @@ app.post('/places', function(req, res) {
         res.send({ message: 'error', error: err });
     });
 });
-
+//what are apps will look like
 var server = app.listen(process.env.PORT || 3000, function() {
     rowdy.print();
 });
